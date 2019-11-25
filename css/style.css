@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(43deg, #79CBD2, #4065BF);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Ubuntu',
+        sans-serif;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+/* width: 320 height: 480 || Iphone 4 */
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+
+}
+
+/* search */
+.searchWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    line-height: 42px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .5);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.searchBtn {
+    background-color: coral;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0 15px;
+}
+
+/* weather */
+
+.weatcherWrapper {
+    max-width: 700px;
+    position: absolute;
+    width: 70%;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 10px 25px;
+    border-radius: 5%;
+    display: none;
+
+}
+
+.city {
+    font-size: 3rem;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "icon temp"
+        "desc desc";
+    justify-items: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.img {
+    grid-area: icon;
+}
+
+.description {
+    grid-area: desc;
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.temp {
+    grid-area: temp;
+}
+
+.bottom {
+    font-size: 2rem;
+    text-align: center;
+    padding: 5px;
+}
+
+/* width: 320 height: 480 || Iphone 4 landscape */
+
+@media (orientation: landscape) {
+    .weatcherWrapper {
+        bottom: 15px;
+        left: 15px;
+        transform: translateX(0);
+    }
+}
+
+/* width: 320 height: 568 || Iphone 5/SE */
+
+@media (min-height: 568px) {
+    .searchWrapper {
+        top: 10px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .weatcherWrapper {
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+        padding: 40px;
+    }
+}
+
+/* width: 768 height: 1024 || Ipad */
+
+@media (min-width: 768px) {
+    .search {
+        font-size: 2.5rem;
+        margin-right: 15px;
+        line-height: 48px;
+    }
+
+    .searchBtn {
+        padding: 0 25px;
+    }
+
+
+    .city {
+        font-size: 4rem;
+    }
+
+    .main,
+    .bottom {
+        font-size: 3rem;
+    }
+
+}
+
+/* width: 768 height: 1024 || Ipad */
+@media (min-height: 768px) and (orientation: landscape) {
+    .weatcherWrapper {
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+}
